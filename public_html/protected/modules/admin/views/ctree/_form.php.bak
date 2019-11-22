@@ -1,0 +1,259 @@
+<div class="form">
+
+<?php
+    $form=$this->beginWidget('CActiveForm',
+         array(
+             'htmlOptions'=>array('enctype'=>'multipart/form-data'),
+            ));
+
+?>
+	<p class="note">Поля со <span class="required">*</span> обязательны.</p>
+
+	<?php echo CHtml::errorSummary($model); ?>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'header'); ?>
+		<?php echo $form->textField($model,'header',array('size'=>80,'maxlength'=>255)); ?>
+		<?php echo $form->error($model,'header'); ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'uri'); ?>
+		<?php echo $form->textField($model,'uri',array('size'=>80,'maxlength'=>100)); ?>
+		<?php echo $form->error($model,'uri'); ?>
+	</div>
+    <div class="row">
+		<?php echo $form->labelEx($model,'visible'); ?>
+		<?php echo $form->checkBox($model,'visible'); ?>
+		<?php echo $form->error($model,'visible'); ?>
+	</div>
+    <div class="row">
+		<?php echo $form->labelEx($model,'image'); ?>
+        <?php
+            if ($model->image)
+            {
+                ?>
+                <img src="/media/<?=$model->image;?>" />
+                <input type="submit" name="delimage" value="Удалить изображение">
+
+            <?php
+            }
+            else
+            {
+
+
+                $this->widget('ext.jfu.JFUWidget', array(
+                                    'url' =>"/admin/ctree/upload",
+                                    //'model' => $model,
+                                    //'attribute' => 'image',
+                ));
+
+
+
+                ?>
+
+                <!-- <input id="fileupload" type="file" name="image"> -->
+
+                <!--
+                <input id="fileupload" type="file" name="XUploadForm[file]">
+                <div id="uploadlog"></div>
+
+                <script type="text/javascript">
+
+                    $(function () {
+                        $('#fileupload').fileupload({
+                            dataType: 'json',
+                            //url: '/admin/ctree/uploadimage',
+                            url: '/admin/ctree/upload',
+                            done: function (e, data) {
+                                $.each(data.result, function (index, file) {
+                                    $('#uploadlog').append('Картинка загружена: <img src="'+file.name+'" /><br/>');
+                                    //$('#fileupload').hide();
+                                    //$('#fileupload').fileupload('disable');
+                                    $('#fileupload').fileupload('destroy');
+                                });
+                            }
+                        });
+
+                        $('#fileupload').bind('fileuploadfail', function (e, data) {
+                            $('#uploadlog').append('<b style="color: red;">Ошибка при загрузке</b>');
+                            //console.dir(e);
+                            //console.dir(data);
+                        });
+                    });
+
+                </script>
+                -->
+                <?php
+            }
+        ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'upper_text'); ?>
+		<?php
+       $this->widget('application.extensions.editor.CKkceditor',array(
+        "model"=>$model,                # Data-Model
+        "attribute"=>'upper_text',         # Attribute in the Data-Model
+        "height"=>'200px',
+        "width"=>'600',
+        "filespath"=>dirname(Yii::app()->request->scriptFile)."/media/",
+        "filesurl"=>Yii::app()->baseUrl."/media/",
+
+
+        "config"=>array(
+            //'autoUpdateElement'=>1,
+            'toolbar' => array(
+                array('Source','-','AjaxSave','Preview'),
+                array('Cut','Copy','Paste','PasteText','PasteFromWord'),
+                array('SelectAll','RemoveFormat'),
+                array('Image','Flash','Table','SpecialChar','PageBreak'),
+                '/',
+                array('Bold','Italic','Underline','Strike','-','Subscript','Superscript'),
+                array('NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'),
+                array('JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'),
+                '/',
+                array('Link','Unlink','Anchor'),
+                array('Format','Font','FontSize'),
+                array('TextColor','BGColor'),
+                array('Maximize', 'ShowBlocks')
+
+            ),
+            'language'=>'ru',
+            //'language'=>'en',
+
+    ) ));
+        ?>
+		<?php echo $form->error($model,'upper_text'); ?>
+	</div>
+<div class="row">
+		<?php echo $form->labelEx($model,'text'); ?>
+		<?php
+       $this->widget('application.extensions.editor.CKkceditor',array(
+        "model"=>$model,                # Data-Model
+        "attribute"=>'text',         # Attribute in the Data-Model
+        "height"=>'400px',
+        "width"=>'600',
+        "filespath"=>dirname(Yii::app()->request->scriptFile)."/media/",
+        "filesurl"=>Yii::app()->baseUrl."/media/",
+
+
+        "config"=>array(
+            //'autoUpdateElement'=>1,
+            'toolbar' => array(
+                array('Source','-','AjaxSave','Preview'),
+                array('Cut','Copy','Paste','PasteText','PasteFromWord'),
+                array('SelectAll','RemoveFormat'),
+                array('Image','Flash','Table','SpecialChar','PageBreak'),
+                '/',
+                array('Bold','Italic','Underline','Strike','-','Subscript','Superscript'),
+                array('NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'),
+                array('JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'),
+                '/',
+                array('Link','Unlink','Anchor'),
+                array('Format','Font','FontSize'),
+                array('TextColor','BGColor'),
+                array('Maximize', 'ShowBlocks')
+
+            ),
+            'language'=>'ru',
+            //'language'=>'en',
+
+    ) ));
+        ?>
+		<?php echo $form->error($model,'text'); ?>
+	</div>
+
+
+
+	<div class="row buttons">
+		<?php
+        //echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save');
+
+
+        ?>
+        <script type="text/javascript">
+        function refreshTree()
+        {
+            //var tree = jQuery.jstree._reference("#simpletree_widget");
+            //tree.refresh();
+            $('#simpletree_widget').jstree('refresh');
+        }
+        </script>
+        <?php
+
+/*
+            echo CHtml::ajaxSubmitButton('Сохранить',
+                                           $this->createUrl('/ctree/edit/id/'.$model->id.'/'),
+                                           array(//ajaxOptions
+                                                'update'=>'#contentBox',
+                                                'success'=>'refreshTree',
+                                                //'onclick'=>'CKEDITOR.instances.Page_text.updateElement()'
+
+                                                'beforeSend'=>'js:function(){
+                                                    //alert(\'beforeSend\');
+                                                    //CKEDITOR.instances.Page_text.updateElement();
+
+                                                    //for ( instance in CKEDITOR.instances )
+                                                    //CKEDITOR.instances[instance].updateElement();
+
+                                                }',
+
+                                             ),
+                                           array('id' => 'page_struct_form_button1')//htmlOptions
+                                         );
+
+*/
+/*echo CHtml::ajaxSubmitButton( 'Send',
+                                        CHtml::normalizeUrl(array('site/ajaxIndexSubmit')),
+                                        array(
+                                        'error'=>'js:function(){
+                                            alert(\'error\');
+                                        }',
+                                        'beforeSend'=>'js:function(){
+                                            alert(\'beforeSend\');
+                                        }',
+                                        'success'=>'js:function(data){
+                                            alert(\'success, data from server: \'+data);
+                                        }',
+                                        'complete'=>'js:function(){
+                                            alert(\'complete\');
+                                        }',
+                                        //'update'=>'#where_to_put_the_response',
+                                        )
+                                    );*/
+            ?>
+        <input type="button" id="page_struct_form_button1" value="Сохранить">
+<script type="text/javascript">
+
+jQuery('body').undelegate('#page_struct_form_button1','click')
+        .delegate('#page_struct_form_button1','click',function(){
+
+            //CKEDITOR.instances.Page_text.updateElement();
+            for ( instance in CKEDITOR.instances )
+                CKEDITOR.instances[instance].updateElement();
+
+            jQuery.ajax({
+                'success':function(data){
+                    var r=jQuery.parseJSON(data);
+                    if (r!=null && r.status)
+                    {
+                        refreshTree();
+                        showAdminMsg('Изменения сохранены',3000)
+                    }
+                    else
+                    {
+                        processResponseErrors(r);
+                    }
+                 },
+                'type':'POST',
+                'url':'/admin/ctree/edit/id/<?php echo $model->id ?>',
+                'cache':false,
+                'data':jQuery(this).parents("form").serialize()}
+            );
+            return false;});
+
+</script>
+	</div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->
