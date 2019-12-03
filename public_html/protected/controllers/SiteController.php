@@ -22,18 +22,20 @@ class SiteController extends SiteBaseController
 
         $this->currentPromoCode = FrontendItem::getCurrentPromocode();
         if (isset($_POST['promocode'])) {
-            if ($goPhone = GlobalOrdersPhone::getByCode($_POST['promocode'])) {
+            $goPhone = GlobalOrdersPhone::getByCode($_POST['promocode']);
+            if ($goPhone && ($goPhone->used == '0' || $goPhone->oneTime == '0')) {
                 $this->currentPromoCode = $_POST['promocode'];
-                $this->promoCodeMessage = 'Промокод применён, цены обновлены';
-                setcookie(FrontendItem::PROMO_PRICE_SESSION_KEY, $goPhone->promo_code, time()+3600*8);
+                $this->promoCodeMessage = 'Промокод применён, цены обновлены';                
+                setcookie(FrontendItem::PROMO_PRICE_SESSION_KEY, $goPhone->promo_code, time()+3600*8,"/");
                 //Yii::app()->session[FrontendItem::PROMO_PRICE_SESSION_KEY] = $goPhone->promo_code;
+                $goPhone->used = 1;
+                $goPhone->save();
             } else {
                 $this->promoCodeMessage = 'Введён некорректный промокод';
             }
         }
 
     }
-
 
     public function actions()
     {
@@ -46,7 +48,6 @@ class SiteController extends SiteBaseController
 
         );
     }
-
 
     // social auth here
     public function actionLogin()
@@ -113,7 +114,7 @@ class SiteController extends SiteBaseController
         }
 
 
-        $response=array('total'=>Yii::app()->shoppingCart->getItemsCount(),'sum'=>number_format(Yii::app()->shoppingCart->getCost(),0,'',' '));
+        $response=array('total'=>Yii::app()->shoppingCart->getItemsCount(),'sum'=>floatval(Yii::app()->shoppingCart->getCost()));
 
         header('Content-type:application/json');
         echo CJSON::encode($response);
@@ -125,6 +126,7 @@ class SiteController extends SiteBaseController
     public function actionBasket()
     {
         //<META NAME="" CONTENT="NOINDEX, NOFOLLOW">
+//        var_dump($_POST);die;
         Yii::app()->clientScript->registerMetaTag('NOINDEX, NOFOLLOW', 'robots');
 
 
@@ -158,33 +160,59 @@ class SiteController extends SiteBaseController
         if (isset($_POST['OrderForm']) && !Yii::app()->shoppingCart->isEmpty())
         {
             $model->attributes = $_POST['OrderForm'];
-            if ($model->validate())
-            {
-                $fullPhone = str_replace(' ','',$model->phone_prefix).preg_replace('~([^\d]+)~', '',$model->phone);
+            if ($model->validate()) {
+                $fullPhone = str_replace(' ', '', $model->phone_prefix) . preg_replace('~([^\d]+)~', '', $model->phone);
 
                 $promocode = FrontendItem::getCurrentPromocode();
                 if (!$promocode) {
                     $discount = $go->getSavedDiscount($fullPhone);
-                    if(!$discount) {
+                    if (!$discount) {
                         $discount = $go->getDiscountPercentByLastOrder();
                     }
                     if ($discount) {
-                        $sumWithDiscount = round((1-$discount/100)*$totalCost, -4);
+                        $sumWithDiscount = round((1 - $discount / 100) * $totalCost, -4);
                     }
                 } else {
 
                 }
 
 
-
                 $positions = Yii::app()->shoppingCart->getPositions();
 
                 $goItems = array();
-                foreach($positions as $pos) {
+                foreach ($positions as $pos) {
                     /** @var $pos FrontendItem */
-                    $goItems[] = new GlobalOrderItem($pos->header,$pos->getPrice(),$pos->getQuantity());
+                    $goItems[] = new GlobalOrderItem($pos->header, $pos->getPrice(), $pos->getQuantity());
                 }
 
+                /** @author Nshan Vardanyan*/
+                $sum = 0;
+                foreach($goItems as $itm) {
+                    $sum += $itm->price*$itm->qty;
+                }
+//                var_dump($sum);die;
+                $order = new GlobalOrdersOrder();
+                $order->name = $_POST["OrderForm"]["name"];
+                $order->phone_prefix = $_POST["OrderForm"]["phone_prefix"];
+                $order->city = $_POST["OrderForm"]["city"];
+                $order->address = $_POST["OrderForm"]["address"];
+                $order->comment = $_POST["OrderForm"]["comment"];
+                $order->phone = $_POST["OrderForm"]["phone"];
+                $order->time = $_POST["OrderForm"]["time"];
+                $order->sum = $sum;
+                $order->data = json_encode($goItems);
+                if ($promocode){
+                    $promoType = GlobalOrdersPhone::getByCode($promocode);
+                    $promoType->oneTime == 1 ? $order->promo_code_type = 1 : $order->promo_code_type = 2;
+                    $order->promo_code = $promocode;
+                }else {
+                    $order->promo_code = $promocode;
+                    $order->promo_code_type = 0;
+                }
+                $order->when = date('Y-m-d H:i:s');
+                $order->source = 'DoKaDoKa.pro';
+                $order->save();
+                /** @author Nshan Vardanyan*/
 
 
                 $go->addOrder($fullPhone, $goItems, $model->name);
@@ -321,7 +349,6 @@ class SiteController extends SiteBaseController
         $this->render('page', array('page' => $model));
     }
 
-
     public function actionCategory()
     {
         $uri = Yii::app()->request->getQuery('uri', '');
@@ -368,7 +395,6 @@ class SiteController extends SiteBaseController
         );
         $this->render('index',$pparams );
     }
-
 
     public function actionError()
     {
@@ -424,6 +450,4 @@ class SiteController extends SiteBaseController
         $this->render('contact', array('model' => $model));
 
     }
-
-
 }

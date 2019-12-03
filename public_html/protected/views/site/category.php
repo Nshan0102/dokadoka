@@ -35,21 +35,7 @@
         <?endforeach?>
     </ul>
     <div class="hidden-xs hidden-sm" style="margin-top: 15px;">
-        <? if ($promoCode = FrontendItem::getCurrentPromocode()):?>
-            <strong>Ваш промокод <?=$promoCode?> активен</strong>
-        <?else:?>
-            <?if($this->promoCodeMessage):?>
-            <!-- <div><strong><?=$this->promoCodeMessage?></strong></div> -->
-            <script>alert('<?=$this->promoCodeMessage?>');</script>
-        <?endif?>
-            <form action="" method='post' id='promocode-form'>
-                <input type="hidden" name="<?=Yii::app()->request->csrfTokenName?>" value="<?=Yii::app()->request->csrfToken ?>">
-                <label>
-                    <input type="text" name="promocode" value="" placeholder="Промокод">
-                </label>
-                <input type="submit" value="Применить">
-            </form>
-        <?endif?>
+        <!--Nshan-->
     </div>
 
 </div>

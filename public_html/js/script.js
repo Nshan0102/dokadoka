@@ -4,19 +4,40 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem('promo');
         window.location.reload();
     }
+    let winWidth = window.innerWidth;
+    if (winWidth >= 993){
+        let form = document.getElementById('miniForm');
+        form.parentElement.removeChild(form);
+    }else{
+        let form = document.getElementById('largeForm');
+        form.parentElement.removeChild(form);
+    }
 });
+
+function closeVideo(ev,el) {
+    ev.preventDefault();
+    $('iframe')[0].src = '';
+    $('#basketPopup2').hide();
+    return false;
+}
 
 function promoCodeFormSubmit(e) {
     e.preventDefault();
+
     localStorage.setItem('promo','activated');
-    $('#promocode-form').submit();
+    let winWidth = window.innerWidth;
+    if (winWidth >= 993){
+        $('#promocode-form').submit();
+    }else{
+        $('#promocode-formMini').submit();
+    }
 }
 
 function updateBasketSticker(json) {
     var btxt;
     if (json['total'] > 0) {
         $('div.menus').addClass('basket-active');
-        btxtpop = 'В корзине товаров: ' + json['total'] + '. На сумму: ' + json['sum'] + ' Br';
+        btxtpop = 'В корзине товаров: ' + json['total'] + '. На сумму: ' + json['sum'] + ' руб.';
         btxt = 'Товаров: ' + json['total'];
     }
     else {
@@ -32,13 +53,14 @@ function updateBasketItemQty(elemClicked) {
     var itemid = itemBlock.attr('data-id');
     var priceElem = elemClicked.closest('.itemContainer').find('.price');
     var sumElem = elemClicked.closest('.itemContainer').find('.summ');
-	sumElem.html((iqty*parseInt(priceElem.attr('data'))).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")+' руб.');
+	sumElem.html((iqty*parseFloat(priceElem.attr('data'))).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")+' руб.');
     var totalElem = $('#total_price_num');
     totalElem.text('...');
     $.getJSON('/ajaxbasket?upditemid=' + itemid + '&qty=' + iqty, function (json) {
         totalElem.text(json['sum']);
         updateBasketSticker(json);
     });
+    window.location.reload();
 }
 $(document).ready(function () {
     $('#basketPopup').find('.pop').show();
@@ -55,7 +77,9 @@ $.getJSON('/ajaxbasket?additemid=' + $(this).attr('data-id') + '&qty=' + $('#bas
             updateBasketSticker(json);
         });
 });*/
-	$('.add-to-basket-in-youtube').click(function(){
+	$('.add-to-basket-in-youtube').click(function(event){
+	    event.preventDefault();
+        $('iframe')[0].src = '';
 		$('#basketPopup2').hide();
 		thiss= $(this);
 		$('a.add-to-basket').each(function(){
@@ -89,14 +113,14 @@ $.getJSON('/ajaxbasket?additemid=' + $(this).attr('data-id') + '&qty=' + $('#bas
 	//bPopupEl.find('.make-order').attr('data-id',itemid);
 	bPopupEl.find('.add-to-basket').off('click').on('click',function(){
 		$.getJSON('/ajaxbasket?additemid=' + itemid + '&qty=' + bPopupEl.find('.counter-value').val(), function (json) {
-            		updateBasketSticker(json);
-        	});
-		
+            updateBasketSticker(json);
+        });
 		return false;
 	});
-        bPopupEl.show();
+	bPopupEl.show();
 
 	$.getJSON('/ajaxbasket?additemid=' + itemid + '&qty=' + iqty, function (json) {
+        console.log(json);
             updateBasketSticker(json);
         });
 	
@@ -193,11 +217,14 @@ $.getJSON('/ajaxbasket?additemid=' + $(this).attr('data-id') + '&qty=' + $('#bas
         $.getJSON('/ajaxbasket?remove_pos=' + itemid, function (json) {
             updateBasketSticker(json);
         });
+        window.location.reload();
     });
+
     $('.pop .close-window').on('click', function () {
         $('#basketPopup').fadeOut();
         return false;
     });
+
     if ($(window).width() < 768) {
         $('.category-open').on('click', function () {
             $('.sidebar-fix-menu').slideToggle();

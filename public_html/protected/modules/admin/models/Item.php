@@ -22,7 +22,7 @@
  * @property integer $worktime
  * @property integer $caliber
  * @property integer $zalps
- * @property string $price
+ * @property float $price
  * @property string $dimensions
  * @property integer $ishit
  * @property integer $isbonus
@@ -34,7 +34,7 @@
  * @property string $artikul
  * @property Category $category
  * @property integer $unicode
- * @property integer $promo_price
+ * @property float $promo_price
  */
 class Item extends CActiveRecord
 {
@@ -77,7 +77,8 @@ class Item extends CActiveRecord
 			array('header, catid, uri', 'required'),
             //array('colX','default','setOnEmpty'=>true,'value'=>0),//This way Yii will set the attribute colX to 0 if it's empty
             array('price,newprice,oldprice,rating,unicode,promo_price','default','setOnEmpty'=>true,'value'=>null),//This way Yii will set the attributes to null if it's empty
-			array('order,visible, height, worktime, caliber, zalps, ishit, isbonus, isrecommended,showonindex,price,newprice,oldprice,promo_price', 'numerical', 'integerOnly'=>true),
+			array('order,visible, height, worktime, caliber, zalps, ishit, isbonus, isrecommended,showonindex', 'numerical', 'integerOnly'=>true),
+			array('price,newprice,oldprice,promo_price', 'numerical'),
 			array('header, image, imagebig, upper_text,artikul', 'length', 'max'=>255),
 			array('uri', 'length', 'max'=>100),
 			array('unicode', 'length', 'max'=>100),

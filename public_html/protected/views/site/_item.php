@@ -13,8 +13,8 @@ else
 <div class="hidden-xs">
                 <p class="code-title ">код товара:</p>
                 <p class="number hidden-sm hidden-md"><?=$item->getCode();?></p>
-				</div>
-				
+                </div>
+                
     </div>
     <div class="left">
         <div class="img-wrap">
@@ -29,15 +29,15 @@ else
             </a>
         </div>
        <div class="visible-ss hidden-sm hidden-md">
-				 <?if (!$isFull && $item->videocode):?>
+                 <?if (!$isFull && $item->videocode):?>
                 <noindex>
                   <a href="<?=$item->videocode?>" title="<?=CHtml::encode($item->header)?> по цене: <?=$item->getCurrentPriceFormatted()?> руб." class="button-1 btn-youtube watch-video fancybox iframe" data-id="<?=$item->id?>">
-				   <i class="fa fa-youtube-play"></i>
+                   <i class="fa fa-youtube-play"></i>
                      <strong>Смотреть</strong>
                   </a>
                 </noindex>
             <?endif?>
-			</div>
+            </div>
     </div>
 
     <div class="right">
@@ -66,18 +66,18 @@ else
                     <p class="name">Размеры (ШхДхВ см):</p>
                     <p class="value"><?=$item->dimensions?></p>
                 </li> -->
-				<div class="hidden-ss">
-				
-				 <?if (!$isFull && $item->videocode):?>
+                <div class="hidden-ss">
+                
+                 <?if (!$isFull && $item->videocode):?>
                 <noindex>
                   <a href="<?=$item->videocode?>" title="<?=CHtml::encode($item->header)?> по цене: <?=$item->getCurrentPriceFormatted()?> руб." class="button-1 btn-youtube watch-video fancybox iframe" data-id="<?=$item->id?>">
-				  
-				   <i class="fa fa-youtube-play"></i>
+                  
+                   <i class="fa fa-youtube-play"></i>
                      <strong>Смотреть</strong>
                   </a>
                 </noindex>
             <?endif?>
-			</div>
+            </div>
             </ul>
             
         </div>
@@ -85,51 +85,55 @@ else
         <div class="add-wrap">
 
             <p class="price">
-
-
-
-
                 <?if ($item->hasOldPrice()):?>
-                    <br /><span>Цена:</span><span style="    text-decoration: line-through;"> <?=$item->getOldPriceFormatted()?> руб.</span>
+                    <br/><span>Цена:</span>
+                        <s style='color:red'>
+                            <span style='color:black'>
+                                <?=$item->getOldPriceFormatted()?> руб.
+                            </span>
+                        </s>
+                        <span class="newPrice" style="color: #E91E63;border-bottom: 2px solid #8BC34A;">
+                            <?=$item->getCurrentPriceFormatted()?> руб.
+                        </span>
                     <?if ($item->hasPersonalDiscount()):?>
-					
-                        <br /><span>Ваша скидка:</span><?=$item->getDiscountPercent()?>%
+                        <br /><span>Ваша скидка:</span>
+                            <span style="color: red;"><?=$item->getDiscountPercent()?>%</span>
                     <?elseif ($item->hasDiscount()):?>
-                        <br /><span>Скидка:</span><span style="color: #F44336;"> <?=$item->getDiscountPercent()?>%</span>
+                        <br /><span>Скидка:</span>
+                            <span style="color: #F44336;">
+                                <?=$item->getDiscountPercent()?>%
+                            </span>
                     <?endif?>
-
                 <?else:?>
                     <?if ($item->hasPersonalDiscount()):?>
-                        <br />Цена: <?=$item->getOldPriceFormatted()?> руб.
-                        <br />Ваша скидка: <?=$item->getDiscountPercent()?>%
+                        <br />Цена:
+                        <s style='color:red'>
+                            <span style='color:black'>
+                                <?=$item->getOldPriceFormatted()?> руб.
+                            </span>
+                        </s>
+                            <span class="newPrice" style="color: #E91E63;border-bottom: 2px solid #8BC34A;">
+                                <?=$item->getCurrentPriceFormatted()?> руб.
+                            </span>
+                        <br />Ваша скидка: <span style="color: red;"><?=$item->getDiscountPercent()?>%</span>
+                    <?else:?>
+                        <br /> Цена: <span class="newPrice">
+                                <?=$item->getCurrentPriceFormatted()?> руб.
+                            </span>
                     <?endif?>
                 <?endif?>
-                <br />
-		<?if ($item->hasOldPrice()):?>
-
-	                <?if($item->hasPersonalDiscount()):?>
-	                    Ваша цена со скидкой:
-	                <?else:?>
-	                    Цена со скидкой:<br />
-	                <?endif?>
-		<?else:?>
-			Цена:
-		<?endif?>
-
-                <span class="newPrice" style="color: #E91E63;border-bottom: 2px solid #8BC34A;"><?=$item->getCurrentPriceFormatted()?> руб.</span>
-
             </p>
-			
-	<a href="#" class="button button-orange add-to-basket" style="margin-top: 16px;"  data-id="<?=$item->id?>">
+            
+    <a href="#" class="button button-orange add-to-basket" style="margin-top: 16px;"  data-id="<?=$item->id?>">
   <i class="fa fa-shopping-cart"></i>В <strong>корзину</strong>
     </a>
            
 
         </div>
-		
+        
 
     </div>
-	
+    
     <div class="descr">
         <p><?=($isFull?$item->text:$item->shorttext)?></p>
     </div>

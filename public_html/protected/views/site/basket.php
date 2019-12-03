@@ -21,11 +21,11 @@ $currentPromoCode = FrontendItem::getCurrentPromocode();
 
 
             Номер вашего заказа: <?=$orderNum?><br>
-            Сумма заказа: <?=number_format($totalCost,0,'',' ')?> руб.<br>
+            Сумма заказа: <?=floatval($totalCost)?> руб.<br>
             <?if($discount):?>
 
                 Ваша скидка: <?=$discount?>%<br>
-                Сумма к оплате со скидкой: <?=number_format($sumWithDiscount,0,'',' ')?> руб.<br>
+                Сумма к оплате со скидкой: <?=floatval($sumWithDiscount)?> руб.<br>
             <?endif?>
 
 
@@ -65,7 +65,7 @@ $currentPromoCode = FrontendItem::getCurrentPromocode();
                 <p class="code hidden-sm"><?=$position->getCode()?></p>
                 <p class="name"><a href="<?=$position->buildHref()?>"><?=$position->header?></a></p>
                 <p class="price hidden-sm" data="<?=$currentPromoCode?$position->getOrigPrice():$position->getPrice()?>">
-			<?=$currentPromoCode?number_format($position->getOrigPrice(),0,'',' '):number_format($position->getPrice(),0,'',' ')?> руб.</p>
+			<?=$currentPromoCode?floatval($position->getOrigPrice()):floatval($position->getPrice())?> руб.</p>
                 <p class="count">
 							<span class="counter">
 								<span class='minus'></span>
@@ -73,7 +73,7 @@ $currentPromoCode = FrontendItem::getCurrentPromocode();
 								<span class='plus'></span>
 							</span>
                 </p>
-                <p class="summ"><?=$currentPromoCode?number_format($position->getOrigSumPrice(),0,'',' '):number_format($position->getSumPrice(),0,'',' ')?> руб.</p>
+                <p class="summ"><?=$currentPromoCode?floatval($position->getOrigSumPrice()):floatval($position->getSumPrice())?> руб.</p>
                 <p class="delete">
                     <span class="delete-button" data-id="<?=$position->getId()?>"></span>
                 </p>
@@ -92,11 +92,11 @@ $currentPromoCode = FrontendItem::getCurrentPromocode();
                             $currentCost = Yii::app()->shoppingCart->getCost();
                             $discountSum = $currentCost - $origCost;
                         ?>
-                        СУММА: <span><?=number_format($origCost, 0, '',' ');?> руб.</span><br>
-                        СКИДКА: <span style="color: red;font-weight: bold;"><?=number_format($discountSum, 0, '',' ');?> Br</span><br>
-                        ИТОГО СО СКИДКОЙ: <span id="total_price_num"><?=number_format($currentCost, 0, '',' ');?> руб.</span><br>
+                        СУММА: <span><?=floatval($origCost);?> руб.</span><br>
+                        СКИДКА: <span style="color: red;font-weight: bold;"><?=floatval($discountSum);?> руб.</span><br>
+                        ИТОГО СО СКИДКОЙ: <span id="total_price_num"><?=floatval($currentCost);?> руб.</span><br>
                     <?else:?>
-                        ИТОГО: <span><span id="total_price_num"><?=number_format(Yii::app()->shoppingCart->getCost(),0,'',' ');?></span> руб.</span>
+                        ИТОГО: <span><span id="total_price_num"><?=floatval(Yii::app()->shoppingCart->getCost());?></span> руб.</span>
                     <?endif?>
                 </p>
             </li>

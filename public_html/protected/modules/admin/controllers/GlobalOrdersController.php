@@ -18,7 +18,6 @@ class GlobalOrdersController extends CController
         $this->render('dsettings', array('model'=>$model));
     }
 
-
     public function actionClients()
     {
         if (isset($_POST['multi_add'])) {
@@ -45,8 +44,16 @@ class GlobalOrdersController extends CController
 
     public function actionIndex()
     {
-        die('404');
-        $this->render('index'/*, array('phones'=>GlobalOrdersPhone::model()->findAll())*/);
+        $criteria=new CDbCriteria();
+        $count=GlobalOrdersOrder::model()->count($criteria);
+        $pages=new CPagination($count);
+        $pages->pageSize=20;
+        $pages->applyLimit($criteria);
+        $models=GlobalOrdersOrder::model()->findAll($criteria);
+        $this->render('index', array(
+            'models' => $models,
+            'pages' => $pages
+        ));
     }
 
     public function actionDeleteDS()
@@ -61,8 +68,31 @@ class GlobalOrdersController extends CController
     public function actionDelete()
     {
         $model=GlobalOrdersOrder::model()->findByPk(Yii::app()->request->getQuery('id'));
-        if (!$model)
-            throw new CHttpException(404, 'Элемент не найден');
-        $model->delete();
+        if (!$model || !$model->delete()){
+            echo 'Элемент не найден';
+        }
+        echo "success";
+    }
+
+    public function actionOrderSetPaid()
+    {
+        $model=GlobalOrdersOrder::model()->findByPk(Yii::app()->request->getQuery('id'));
+        if (!$model){
+            echo 'Элемент не найден';
+        }
+        $model->paid = 1;
+        $model->save();
+        echo "success";
+    }
+
+    public function actionOrderSetShipped()
+    {
+        $model=GlobalOrdersOrder::model()->findByPk(Yii::app()->request->getQuery('id'));
+        if (!$model){
+            echo 'Элемент не найден';
+        }
+        $model->shipped = 1;
+        $model->save();
+        echo "success";
     }
 } 

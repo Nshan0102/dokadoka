@@ -7,6 +7,8 @@
  * @property $phone
  * @property $discount
  * @property $promo_code
+ * @property $oneTime
+ * @property $used
  */
 class GlobalOrdersPhone extends CActiveRecord
 {
@@ -25,6 +27,14 @@ class GlobalOrdersPhone extends CActiveRecord
     }
 
 
+    /**
+     * @param $id
+     * @return GlobalOrdersPhone
+     */
+    public static function getById($id)
+    {
+        return self::model()->find('id=:id', array(':id'=>$id));
+    }
 
     /**
      * @param string $className
@@ -52,7 +62,6 @@ class GlobalOrdersPhone extends CActiveRecord
             $pcode = substr($pcode, 3);
         } // 375 29 6 00 00 00
         return $pcode;
-
     }
 
     protected function beforeSave()

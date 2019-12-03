@@ -236,3 +236,56 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .clearfix:after, .container:after {content:"\0020";display:block;height:0;clear:both;visibility:hidden;overflow:hidden;}
 .clearfix, .container {display:block;}
 .clear {clear:both;}
+.tableCell {
+    text-align: center;
+    border: 1px solid black;
+    max-width: 150px;
+}
+.tableCell > button{
+    margin-bottom: 5px;
+}
+.tableCell > button:hover{
+    cursor: pointer;
+}
+.theadText{
+    font-weight: bold;
+}
+tr{
+    width: fit-content;
+}
+tr:hover{
+    background-color: #fdfdcc;
+}
+td > input{
+    max-width: 100px;
+    width: 100px;
+}
+.tableCellLast{
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+    height: 41px;
+    display: flex;
+    justify-content: space-around;
+}
+.btn-primary{
+    border: 0;
+    border-radius: 5px;
+    padding: 1px 15px;
+    color: white;
+    background-color: #0e509e;
+    cursor: pointer;
+}
+.btn-danger{
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+}
+.pagination, .pager {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

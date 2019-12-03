@@ -9,7 +9,8 @@
     //print_r($_GET);
     ?>
 	<br /><br />
-	<span style="font-size:18px;">Выбирайте что Вас интересует:</span></p>
+	<span style="font-size:18px;">Выбирайте что Вас интересует:</span>
+</div>
 	</center>
 <p style="margin-left: 40px; ">
 	<br />

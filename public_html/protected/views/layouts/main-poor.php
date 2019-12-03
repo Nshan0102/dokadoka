@@ -84,7 +84,7 @@ $isCartItems = !Yii::app()->shoppingCart->isEmpty();
                 if($isCartItems) {
                 ?>
                 В корзине товаров: <?= Yii::app()->shoppingCart->getItemsCount();?>. На сумму: <span style="color: #FFEB3B;
-                    font-weight: bold;"><?=number_format(Yii::app()->shoppingCart->getCost(),0,'',' ')?> Br</span>
+                    font-weight: bold;"><?=number_format(Yii::app()->shoppingCart->getCost(),0,'',' ')?> руб.</span>
                 <?php } else { ?>
                 <span class="basket-active" >В корзине нет товаров</span>
                 <? }?>	 -->

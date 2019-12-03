@@ -173,7 +173,7 @@ class GlobalOrders
 
         $orderRec = array(
             'phone_id'=>$phID,
-            'sum'=>intval($sum), //todo стоимость заказа в $
+            'sum'=>floatval($sum), //todo стоимость заказа в $
             'data'=>json_encode($oitems),
             'when'=>date('Y-m-d H:i:s'),
             'source' => $this->source,

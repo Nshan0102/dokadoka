@@ -21,7 +21,7 @@
         </div>
     <?endif?>
 
-	
+    
     <div class="similar-items">
         <p class="title">Другие товары из этой категории:</p>
 
@@ -35,7 +35,40 @@
                         <?endif?>
                         <span class="name"><?=$catitem->header?></span>
                         <?if($catitem->price||$catitem->oldprice):?>
-                        <span class="price">Цена: <?=number_format($catitem->price?$catitem->price:$catitem->oldprice,0,'',' ')?> руб.</span>
+                        <span class="price">
+                            <?if ($catitem->hasOldPrice()):?>
+                                <br/><span>Цена:</span>
+                                <s style='color:red'>
+                                    <span style='color:black'>
+                                        <?=$catitem->getOldPriceFormatted()?> руб.
+                                    </span>
+                                </s>
+                                <span class="newPrice" style="color: #E91E63;border-bottom: 2px solid #8BC34A;">
+                                    <?=$catitem->getCurrentPriceFormatted()?> руб.
+                                </span>
+                                <?if ($catitem->hasPersonalDiscount()):?>
+                                    <br /><span>Ваша скидка:</span>
+                                    <span style="color: red;"><?=$catitem->getDiscountPercent()?>%</span>
+                                <?elseif ($item->hasDiscount()):?>
+                                    <br /><span>Скидка:</span><span style="color: red;"> <?=$catitem->getDiscountPercent()?>%</span>
+                                <?endif?>
+                            <?else:?>
+                                <?if ($catitem->hasPersonalDiscount()):?>
+                                    <br /> Цена: <s style='color:red'>
+                                        <span style='color:black'>
+                                            <?=$catitem->getOldPriceFormatted()?> руб.
+                                        </span></s>
+                                    <span class="newPrice" style="color: #E91E63;border-bottom: 2px solid #8BC34A;">
+                                        <?=$catitem->getCurrentPriceFormatted()?> руб.
+                                    </span>
+                                    <br />Ваша скидка: <span style="color: red;"><?=$catitem->getDiscountPercent()?>%</span>
+                                <?else:?>
+                                    <br /> Цена: <span style='color:black'>
+                                        <?=$catitem->getCurrentPriceFormatted()?> руб.
+                                    </span>
+                                <?endif?>
+                            <?endif?>
+                        </span>
                         <?endif?>
                     </a>
                 </li>
@@ -64,21 +97,7 @@
         <?endforeach?>
     </ul>
     <div class="hidden-xs hidden-sm" style="margin-top: 15px;">
-        <? if ($promoCode = FrontendItem::getCurrentPromocode()):?>
-            <strong>Ваш промокод <?=$promoCode?> активен</strong>
-        <?else:?>
-            <?if($this->promoCodeMessage):?>
-            <!-- <div><strong><?=$this->promoCodeMessage?></strong></div> -->
-            <script>alert('<?=$this->promoCodeMessage?>');</script>
-        <?endif?>
-            <form action="" method='post' id='promocode-form'>
-                <input type="hidden" name="<?=Yii::app()->request->csrfTokenName?>" value="<?=Yii::app()->request->csrfToken ?>">
-                <label>
-                    <input type="text" name="promocode" value="" placeholder="Промокод">
-                </label>
-                <input type="submit" value="Применить">
-            </form>
-        <?endif?>
+        <!--Nshan-->
     </div>
 
 </div>

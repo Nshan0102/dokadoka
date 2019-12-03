@@ -3,12 +3,21 @@
 /**
  * Class GlobalOrdersOrder
  * @property $id
- * @property $phone_id
+ * @property $name
+ * @property $phone
+ * @property $phone_prefix
  * @property $sum
  * @property $data
  * @property $source
  * @property $when
- * @property GlobalOrdersPhone $phone
+ * @property $time
+ * @property $city
+ * @property $address
+ * @property $comment
+ * @property $promo_code
+ * @property $promo_code_type
+ * @property $paid
+ * @property $shipped
  */
 class GlobalOrdersOrder extends CActiveRecord
 {
@@ -34,7 +43,7 @@ class GlobalOrdersOrder extends CActiveRecord
     public function relations()
     {
         return array(
-            'phone' => array(self::BELONGS_TO, 'GlobalOrdersPhone', 'phone_id'),
+            'phone' => array(self::BELONGS_TO, 'GlobalOrdersPhone', 'phone'),
         );
     }
 
@@ -47,10 +56,12 @@ class GlobalOrdersOrder extends CActiveRecord
     {
         return array(
             'sum'=>'сумма',
-            'phone_id'=>'клиент',
+            'phone'=>'клиент',
             'source'=>'источник',
             'data'=>'данные',
             'when'=>'когда',
+            'comment'=>'комментария',
+            'time'=>'время',
         );
     }
 

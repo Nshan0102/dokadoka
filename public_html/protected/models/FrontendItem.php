@@ -22,7 +22,7 @@
  * @property integer $worktime
  * @property integer $caliber
  * @property integer $zalps
- * @property string $price
+ * @property float $price
  * @property string $dimensions
  * @property integer $ishit
  * @property integer $isbonus
@@ -33,9 +33,9 @@
  * @property string $rating
  * @property string $artikul
  * @property integer $unicode
- * @property integer $newprice
- * @property integer $oldprice
- * @property integer $promo_price
+ * @property float $newprice
+ * @property float $oldprice
+ * @property float $promo_price
  * @property FrontendCategory $category
  */
 class FrontendItem extends CActiveRecord implements IECartPosition
@@ -49,10 +49,10 @@ class FrontendItem extends CActiveRecord implements IECartPosition
      * @param string $className
      * @return FrontendItem
      */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+    public static function model($className=__CLASS__)
+    {
+        return parent::model($className);
+    }
 
     public function getCode()
     {
@@ -64,20 +64,20 @@ class FrontendItem extends CActiveRecord implements IECartPosition
         return '/item/'.$this->uri;
     }
 
-	public function tableName()
-	{
-		return '{{items}}';
-	}
+    public function tableName()
+    {
+        return '{{items}}';
+    }
 
     public function primaryKey()
     {
         return 'id';
     }
 
-	public function rules()
-	{
-		return array();
-	}
+    public function rules()
+    {
+        return array();
+    }
 
     public function getId()
     {
@@ -102,8 +102,8 @@ class FrontendItem extends CActiveRecord implements IECartPosition
             $criteria->order = $this->getTableAlias(false,false).".`order`";
         else
             $criteria->order = $ordr;
-        $criteria->condition = 'catid=:catid AND visible=1';
-        $criteria->params=array(':catid' => $catid);
+            $criteria->condition = 'catid=:catid AND visible=1';
+            $criteria->params=array(':catid' => $catid);
         return $this->findAll($criteria);
     }
 
@@ -142,17 +142,17 @@ class FrontendItem extends CActiveRecord implements IECartPosition
         );
     }
 
-	public function relations()
-	{
-		return array(
+    public function relations()
+    {
+        return array(
             'category'=>array(self::BELONGS_TO, 'FrontendCategory', 'catid','select'=>'id,header'),
             //more info on params and syntax in CActiveRecord.relations() phpdoc
-		);
-	}
+        );
+    }
 
 
     public function search()
-   	{
+    {
         $criteria=new CDbCriteria;
 
         $sort = new CSort;
@@ -181,9 +181,9 @@ class FrontendItem extends CActiveRecord implements IECartPosition
         );
 
         return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
+            'criteria'=>$criteria,
             'sort'=>$sort,
-		));
+        ));
 
     }
 
@@ -197,7 +197,7 @@ class FrontendItem extends CActiveRecord implements IECartPosition
 
     public function getOldPriceFormatted()
     {
-        return number_format($this->oldprice, 0, '', ' ');
+        return floatval($this->oldprice);
     }
 
     public function hasDiscount()
@@ -240,7 +240,8 @@ class FrontendItem extends CActiveRecord implements IECartPosition
 
     public function getCurrentPriceFormatted()
     {
-        return number_format($this->getCurrentPrice(), 0, '', ' ');
+//        return number_format($this->getCurrentPrice(), 0, '', ' ');
+        return floatval($this->getCurrentPrice());
     }
 
     public function getCurrentPrice()

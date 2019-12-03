@@ -89,6 +89,7 @@ class ItemsController extends CController
     public function actionItemForm()
     {
 
+
         if(!isset($_GET['id']))
             $model = new $this->modelName;
         else
@@ -97,7 +98,6 @@ class ItemsController extends CController
             if (is_null($model))
                 throw new CHttpException(404);
         }
-
 
         /* //не работает при enctype
         if(isset($_POST['ajax']) && $_POST['ajax']==='item-itemForm-form')
@@ -110,7 +110,6 @@ class ItemsController extends CController
 
         if(isset($_POST[$this->modelName]))
         {
-
             if (isset($_POST['delimage'])) //удаление маленькой картинки
             {
                 $imgField='image';
@@ -167,7 +166,6 @@ class ItemsController extends CController
 
             if($model->save())
             {
-
                 if ($image1)
                     $image1->saveAs($webRoot.$model->$imgField1);
                 if ($image2)
@@ -176,7 +174,7 @@ class ItemsController extends CController
                 //Yii::app()->user->setFlash('success',"webroot:".$webRoot.",".$model->$imgField1);
 
                 Yii::app()->user->setFlash('success',"Товар сохранён");
-                //$this->redirect(array('/admin/items/list'));
+//                $this->redirect(array('/admin/items/list'));
                 $this->redirect(array('/admin/items/itemForm/id/'.$model->id));//tst id in new
 
             }

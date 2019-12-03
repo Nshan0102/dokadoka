@@ -3077,3 +3077,295 @@ body:
                 <body>
                 <h3>Состав заказа</h3>
                 [SB-49-01] TITANIUM 1 шт. (90 руб.)<br>Итого: 90 руб.<br><h3>Клиент</h3><div>Использован промокод 777</div>Имя: dsafsadf<br>Телефон: +375 29 98989898989<br>Город: Минск<br></body></html>
+2019/11/23 16:09:23 [info] [application] SiteController error:Не определено свойство "CDbCriteria.promoCode".
+2019/11/23 16:10:55 [info] [application] SiteController error:Не определено свойство "CDbCriteria.promoCode".
+2019/11/23 16:12:20 [info] [application] SiteController error:Не определено свойство "CDbCriteria.promoCode".
+2019/11/23 16:16:56 [info] [application] SiteController error:Не определено свойство "CDbCriteria.id".
+2019/11/23 16:25:10 [info] [application] SiteController error:Object of class PromoCode could not be converted to string
+2019/11/23 16:26:23 [info] [application] SiteController error:Не определено свойство "PromoCode.phone".
+2019/11/23 17:15:19 [info] [application] SiteController error:Не определено свойство "PromoCode.phone".
+2019/11/23 17:20:29 [info] [application] SiteController error:include(lll.php): failed to open stream: No such file or directory
+2019/11/23 17:20:43 [info] [application] SiteController error:Не определено свойство "CDataColumn.style".
+2019/11/23 17:23:59 [info] [application] SiteController error:Не определено свойство "CGridView.columnCssClass".
+2019/11/25 10:24:21 [info] [application] SiteController error:Невозможно определить CSRF.
+2019/11/25 10:24:44 [info] [application] SiteController error:Cannot unset string offsets
+2019/11/25 11:43:18 [info] [application] SiteController error:Невозможно определить CSRF.
+2019/11/25 11:48:39 [info] [application] SiteController error:Невозможно определить CSRF.
+2019/11/25 12:33:42 [info] [application] SiteController error:Не определено свойство "GlobalOrdersPhone.phone_number".
+2019/11/25 12:33:50 [info] [application] SiteController error:Не определено свойство "GlobalOrdersPhone.phone_number".
+2019/11/25 12:37:42 [info] [application] SiteController error:Не определено свойство "GlobalOrdersPhone.used".
+2019/11/25 12:41:21 [info] [application] SiteController error:Object of class GlobalOrdersPhone could not be converted to string
+2019/11/25 12:41:47 [info] [application] SiteController error:Не определено свойство "GlobalOrdersPhone.used".
+2019/11/25 13:31:03 [info] [application] SiteController error:Cannot use object of type CArrayDataProvider as array
+2019/11/25 13:33:00 [info] [application] SiteController error:Cannot use object of type CArrayDataProvider as array
+2019/11/25 13:36:54 [info] [application] SiteController error:Не определено свойство "GlobalOrdersPhone.phone_number".
+2019/11/25 13:41:08 [info] [application] SiteController error:Не определено свойство "GlobalOrdersPhone.phone_number".
+2019/11/25 14:55:37 [info] [application] SiteController error:Невозможно определить CSRF.
+2019/11/25 14:56:09 [info] [application] SiteController error:Невозможно определить CSRF.
+2019/11/25 14:56:45 [info] [application] SiteController error:Невозможно определить CSRF.
+2019/11/25 14:58:37 [info] [application] SiteController error:Невозможно определить CSRF.
+2019/11/25 15:04:51 [info] [application] SiteController error:Невозможно определить CSRF.
+2019/11/25 15:05:40 [info] [application] SiteController error:Невозможно определить CSRF.
+2019/11/26 09:50:15 [info] [application] SiteController error:Call to a member function setItemCount() on integer
+2019/11/26 09:54:24 [info] [application] SiteController error:include(ordersPagination.php): failed to open stream: No such file or directory
+2019/11/26 10:38:00 [info] [application] SiteController error:Невозможно определить CSRF.
+2019/11/26 10:38:42 [info] [application] SiteController error:Невозможно определить CSRF.
+2019/11/26 10:48:40 [info] [application] SiteController error:Class 'yii\widgets\ActiveForm' not found
+2019/11/26 10:48:42 [info] [application] SiteController error:Class 'yii\widgets\ActiveForm' not found
+2019/11/26 10:48:45 [info] [application] SiteController error:Class 'yii\widgets\ActiveForm' not found
+2019/11/26 10:50:00 [info] [application] SiteController error:Call to undefined method CActiveForm::begin()
+2019/11/26 11:15:31 [info] [application] SiteController error:Call to a member function saveAs() on array
+2019/11/26 11:19:03 [info] [application] SiteController error:include(UploadForm.php): failed to open stream: No such file or directory
+2019/11/26 11:33:25 [info] [application] SiteController error:Call to a member function saveAs() on array
+2019/11/26 11:33:32 [info] [application] SiteController error:Контроллер PromoCodesController содержит в своем представлении "D:\OSPanel\domains\dokadoka\public_html\protected\modules\admin\views\promoCodes\index.php" тэги виджетов с неправильной вложенностью. В виджете CActiveForm не используется вызов endWidget().
+2019/11/26 11:34:05 [info] [application] SiteController error:Контроллер PromoCodesController содержит в своем представлении "D:\OSPanel\domains\dokadoka\public_html\protected\modules\admin\views\promoCodes\index.php" тэги виджетов с неправильной вложенностью. В виджете CActiveForm не используется вызов endWidget().
+2019/11/26 11:35:53 [info] [application] SiteController error:Call to a member function getErrors() on null
+2019/11/26 13:40:49 [info] [application] SiteController error:include(ActiveForm.php): failed to open stream: No such file or directory
+2019/11/26 13:41:05 [info] [application] SiteController error:Call to undefined method CActiveForm::begin()
+2019/11/26 13:42:00 [info] [application] SiteController error:Using $this when not in object context
+2019/11/26 13:42:40 [info] [application] SiteController error:Using $this when not in object context
+2019/11/26 13:42:45 [info] [application] SiteController error:Using $this when not in object context
+2019/11/26 13:43:19 [info] [application] SiteController error:Using $this when not in object context
+2019/11/26 13:44:24 [info] [application] SiteController error:Using $this when not in object context
+2019/11/26 13:46:02 [info] [application] SiteController error:Using $this when not in object context
+2019/11/26 13:46:17 [info] [application] SiteController error:Using $this when not in object context
+2019/11/26 13:49:04 [info] [application] SiteController error:move_uploaded_file() expects parameter 1 to be string, array given
+2019/11/26 13:49:33 [info] [application] SiteController error:move_uploaded_file(uploads/promoCode.txt): failed to open stream: No such file or directory
+2019/11/27 11:15:33 [info] [application] SiteController error:Cannot use object of type CPagination as array
+2019/11/27 11:15:49 [info] [application] SiteController error:Не определено свойство "CPagination._itemCount".
+2019/11/27 11:17:03 [info] [application] SiteController error:Не определено свойство "CLinkPager.list".
+2019/11/27 11:38:14 [info] [application] SiteController error:unlink(D:\OSPanel\userdata\temp\php85B.tmp): No such file or directory
+2019/11/27 11:39:25 [info] [application] SiteController error:syntax error, unexpected '$e' (T_VARIABLE), expecting identifier (T_STRING) or namespace (T_NAMESPACE) or \\ (T_NS_SEPARATOR)
+2019/11/27 11:40:41 [info] [application] SiteController error:unlink(D:\OSPanel\userdata\temp\php46D4.tmp): No such file or directory
+2019/11/27 11:42:47 [info] [application] SiteController error:syntax error, unexpected 'unset' (T_UNSET), expecting identifier (T_STRING)
+2019/11/27 15:46:09 [info] [application] SiteController error:Невозможно определить CSRF.
+2019/11/28 13:27:14 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4313
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP499]FIREWORKS WORLD 1 шт. (38 руб.)<br>[GP508]STRENGTH 1 шт. (147 руб.)<br>[GWM6601]Professional effects 1 шт. (147 руб.)<br>Итого: 332 руб.<br><h3>Клиент</h3><div>Использован промокод 777</div>Имя: Test<br>Телефон: +375 44 5025777<br>Адрес: test<br>Город: Минск<br></body></html>
+2019/11/29 00:24:55 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4314
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP498]DREAM 1 шт. (20 руб.)<br>Итого: 20 руб.<br><h3>Клиент</h3><div>Использован промокод 555</div>Имя: 3<br>Телефон: +375 29 3<br>Желаемое время доставки: 3<br>Адрес: 3<br>Город: Минск<br></body></html>
+2019/11/29 00:26:51 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4315
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP499]FIREWORKS WORLD 1 шт. (38 руб.)<br>Итого: 38 руб.<br><h3>Клиент</h3><div>Использован промокод 555</div>Имя: 4<br>Телефон: +375 29 4<br>Желаемое время доставки: 4<br>Адрес: 4<br>Город: Минск<br></body></html>
+2019/11/29 00:43:22 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4316
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP499]FIREWORKS WORLD 1 шт. (55 руб.)<br>Итого: 55 руб.<br><h3>Клиент</h3>Имя: 1<br>Телефон: +375 29 1<br>Желаемое время доставки: 1<br>Адрес: 1<br>Город: Минск<br></body></html>
+2019/11/29 09:44:25 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4317
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GW218-89]Balet 1 шт. (5 руб.)<br>Итого: 5 руб.<br><h3>Клиент</h3>Имя: dsafsadf<br>Телефон: +375 25 98989898989<br>Желаемое время доставки: 18:20<br>Адрес: sdfsdfa s df sdaf sd fsda f<br>Город: Минск<br></body></html>
+2019/11/29 09:45:35 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4318
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GW218-89]Balet 24 шт. (120 руб.)<br>Итого: 120 руб.<br><h3>Клиент</h3>Имя: dsafsadf<br>Телефон: +375 29 98989898989<br>Желаемое время доставки: 18:20<br>Адрес: sdfsdfa s df sdaf sd fsda f<br>Город: Минск<br></body></html>
+2019/11/29 11:27:08 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4319
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GW218-89]Balet 11 шт. (44 руб.)<br>[GW218-93] COLORFULL WORLD 1 шт. (8 руб.)<br>Итого: 52 руб.<br><h3>Клиент</h3><div>Использован промокод 2019</div>Имя: dsafsadf<br>Телефон: +375 29 98989898989<br>Желаемое время доставки: 18:20<br>Адрес: sdfsdfa s df sdaf sd fsda f<br>Город: Минск<br></body></html>
+2019/11/29 14:33:01 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4320
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [0977]Бенгальские огни 16 см  7 шт. (7 руб.)<br>Итого: 7 руб.<br><h3>Клиент</h3><div>Использован промокод 2019</div>Имя: 1<br>Телефон: +375 29 3<br>Желаемое время доставки: 4<br>Адрес: 4<br>Город: Минск<br></body></html>
+2019/11/30 10:29:33 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4321
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP508]STRENGTH 1 шт. (210 руб.)<br>[GWM6601]Professional effects 1 шт. (210 руб.)<br>Итого: 420 руб.<br><h3>Клиент</h3>Имя: 1<br>Телефон: +375 29 1<br>Комментарий: 1<br>Желаемое время доставки: 1<br>Адрес: 1<br>Город: Минск<br></body></html>
+2019/11/30 15:12:15 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4322
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP498]DREAM 9 шт. (180 руб.)<br>[GP475] ANGRY TIGER 9 шт. (189 руб.)<br>[GP497]STARLIGHT 3 шт. (36 руб.)<br>[GP508]STRENGTH 1 шт. (147 руб.)<br>[GWM6103]SKY DANCING 2 51 шт. (10659 руб.)<br>Итого: 11211 руб.<br><h3>Клиент</h3><div>Использован промокод 2019</div>Имя: dsafsadf<br>Телефон: +375 29 98989898989<br>Город: Минск<br></body></html>
+2019/11/30 15:57:05 [info] [application] SiteController error:Cannot access private property GlobalOrders::$source
+2019/11/30 15:57:59 [info] [application] SiteController error:Invalid argument supplied for foreach()
+2019/11/30 15:58:52 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.name".
+2019/11/30 15:59:36 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.name".
+2019/11/30 15:59:39 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.name".
+2019/11/30 16:01:57 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4323
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP498]DREAM 8 шт. (160 руб.)<br>[T-6237]MAGIC SHOTS 1 шт. (5 руб.)<br>[MF001]Тортовые свечи 8 шт. (16 руб.)<br>Итого: 181 руб.<br><h3>Клиент</h3><div>Использован промокод 2019</div>Имя: Ншан<br>Телефон: +375 29 664341<br>Комментарий: Здравствуйте<br>Желаемое время доставки: 18:20<br>Адрес: ул. Пушкина 8/9<br>Город: Минск<br></body></html>
+2019/11/30 17:43:27 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4324
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP508]STRENGTH 8 шт. (1680 руб.)<br>Итого: 1680 руб.<br><h3>Клиент</h3>Имя: Ншан<br>Телефон: +375 29 664341<br>Комментарий: Network<br>Желаемое время доставки: 18:20<br>Адрес: ул. Пушкина 8/9<br>Город: Минск<br></body></html>
+2019/12/02 09:36:40 [info] [application] SiteController error:CDbConnection failed to open the DB connection.
+2019/12/02 11:03:08 [info] [application] SiteController error:Object of class GlobalOrdersOrder could not be converted to string
+2019/12/02 11:09:01 [info] [application] SiteController error:json_decode() expects parameter 1 to be string, object given
+2019/12/02 11:10:13 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder._attributes".
+2019/12/02 11:10:22 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder._attributes".
+2019/12/02 11:24:50 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder._attributes".
+2019/12/02 15:52:13 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4325
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP508]STRENGTH 6 шт. (1260 руб.)<br>[GP499]FIREWORKS WORLD 1 шт. (55 руб.)<br>[SB-19-01] SATURDAY  1 шт. (55 руб.)<br>[SB-19-02]LOVE OF BLUE  1 шт. (55 руб.)<br>[WP2538]TORNADO 1 шт. (55 руб.)<br>[GP512]SHOW TIME 1 шт. (55 руб.)<br>[GWM5020] STENE 1 шт. (55 руб.)<br>[GWM5021]STENE 1 шт. (55 руб.)<br>[GWM5028] DEEP GREEN 1 шт. (55 руб.)<br>[GWM5034]Wonderful World 1 шт. (55 руб.)<br>[SB-25-01]BIG SURE  1 шт. (70 руб.)<br>[SB-25-02]Big Sure 1 шт. (70 руб.)<br>[MC098]SPEED FIREWORKS 1 шт. (75 руб.)<br>[MC099]SPEED FIREWORKS 2 1 шт. (75 руб.)<br>[MC100] HEART BEATS 1 шт. (75 руб.)<br>[MC101]BEUTIFUL NIGHT 1 шт. (75 руб.)<br>[GWM6251]DEAD END 1 шт. (75 руб.)<br>[MC113]REPLAY 1 шт. (100 руб.)<br>[SB-36-01]Blessing 1 шт. (100 руб.)<br>[SB-36-02]Ghostly beauty 1 шт. (100 руб.)<br>[GWM6360]Golden leaves 1 шт. (100 руб.)<br>[GWM6361]Wonderful time 1 шт. (100 руб.)<br>[MC114]Golden Spider 1 шт. (130 руб.)<br>[МС136]SHATER 1 шт. (130 руб.)<br>Итого: 3030 руб.<br><h3>Клиент</h3>Имя: Ншан<br>Телефон: +375 29 664341<br>Желаемое время доставки: 18:20<br>Адрес: ул. Пушкина 8/9<br>Город: Минск<br></body></html>
+2019/12/02 16:19:07 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.comment".
+2019/12/02 16:20:22 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.comment".
+2019/12/02 16:20:49 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.comment".
+2019/12/02 16:21:10 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.comment".
+2019/12/02 16:21:34 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.comment".
+2019/12/02 16:22:51 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.comment".
+2019/12/02 16:24:37 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.comment".
+2019/12/02 16:26:43 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.comment".
+2019/12/02 16:27:40 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.comment".
+2019/12/02 16:28:00 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.comment".
+2019/12/02 16:28:35 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.comment".
+2019/12/02 16:28:56 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4326
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP498]DREAM 3 шт. (90 руб.)<br>Итого: 90 руб.<br><h3>Клиент</h3>Имя: Ншан<br>Телефон: +375 29 664341<br>Город: Минск<br></body></html>
+2019/12/02 16:42:29 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4327
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP498]DREAM 1 шт. (30 руб.)<br>Итого: 30 руб.<br><h3>Клиент</h3>Имя: Ншан<br>Телефон: +375 29 664341<br>Комментарий: асдасдасд<br>Город: Минск<br></body></html>
+2019/12/02 16:50:09 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #4328
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP498]DREAM 1 шт. (30 руб.)<br>[GP508]STRENGTH 1 шт. (210 руб.)<br>[GWM6601]Professional effects 1 шт. (210 руб.)<br>[GWM6602]Professional Effect  1 шт. (210 руб.)<br>[GWM6604] THE BEST 1 шт. (210 руб.)<br>[GWM6605] TOO PERFECT 1 шт. (210 руб.)<br>[GWM6606]Beauty in Dream 1 шт. (210 руб.)<br>[МС148]Monster  1 шт. (230 руб.)<br>[МС149]Blue night Fire 1 шт. (230 руб.)<br>[МС146] Explosive 1 шт. (280 руб.)<br>[SB-100-01] Metal power 1 шт. (290 руб.)<br>[GWM6101] SKY DANCING  1 шт. (290 руб.)<br>[GWM6103]SKY DANCING 2 1 шт. (290 руб.)<br>[SB-120-01]Prehistoric al power 1 шт. (340 руб.)<br>[GWM6121]COLOURED WORLD 1 шт. (340 руб.)<br>[GWM6122]STAR WARS 1 шт. (340 руб.)<br>[GWM6123]CLASSIC SHOW 1 шт. (340 руб.)<br>[MC112]TWISTER 1 шт. (340 руб.)<br>[МС147]Armagedon 1 шт. (360 руб.)<br>Итого: 4960 руб.<br><h3>Клиент</h3>Имя: Ншан<br>Телефон: +375 29 664341<br>Комментарий: Значимость этих проблем настолько очевидна, что постоянное информационно-пропагандистское обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации форм развития. Идейные соображения высшего порядка, а также рамки и место обучения кадров способствует подготовки и реализации соответствующий условий активизации. Идейные соображения высшего порядка, а также начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки позиций, занимаемых участниками в отношении поставленных задач.
+
+Значимость этих проблем настолько очевидна, что начало повседневной работы по формированию позиции способствует подготовки и реализации соответствующий условий активизации. Равным образом дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент проверки системы обучения кадров, соответствует насущным потребностям. Равным образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке модели развития. Задача организации, в особенности же укрепление и развитие структуры позволяет выполнять важные задания по разработке соответствующий условий активизации.
+
+С другой стороны укрепление и развитие структуры позволяет оценить значение модели развития. Равным образом рамки и место обучения кадров требуют определения и уточнения направлений прогрессивного развития. Не следует, однако забывать, что укрепление и развитие структуры влечет за собой процесс внедрения и модернизации дальнейших направлений развития.
+
+Равным образом сложившаяся структура организации представляет собой интересный эксперимент проверки позиций, занимаемых участниками в отношении поставленных задач. С другой стороны дальнейшее развитие различных форм деятельности позволяет оценить значение модели развития.
+
+Равным образом дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание форм развития. Товарищи! дальнейшее развитие различных форм деятельности требуют определения и уточнения форм развития. Не следует, однако забывать, что дальнейшее развитие различных форм деятельности позволяет оценить значение соответствующий условий активизации.
+
+Не следует, однако забывать, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке систем массового участия. Повседневная практика показывает, что новая модель организационной деятельности играет важную роль в формировании систем массового участия.<br>Желаемое время доставки: 18:20<br>Адрес: ул. Пушкина 8/9<br>Город: Минск<br></body></html>
+2019/12/02 16:59:38 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #1
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GP508]STRENGTH 1 шт. (210 руб.)<br>Итого: 210 руб.<br><h3>Клиент</h3>Имя: Ншан<br>Телефон: +375 29 664341<br>Комментарий: asdf d f asdf<br>Желаемое время доставки: 18:20<br>Адрес: ул. Пушкина 8/9<br>Город: Минск<br></body></html>
+2019/12/02 19:29:19 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #1
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [0977]Бенгальские огни 16 см  4 шт. (4 руб.)<br>Итого: 4 руб.<br><h3>Клиент</h3><div>Использован промокод 2019</div>Имя: Ншан<br>Телефон: +375 29 664341<br>Комментарий: sad afsdf sdaf sda fsda f sad afsdf sdaf sda fsda f sad afsdf sdaf sda fsda f sad afsdf sdaf sda fsda f sad afsdf sdaf sda fsda f sad afsdf sdaf sda fsda f sad afsdf sdaf sda fsda f sad afsdf sdaf sda fsda f sad afsdf sdaf sda fsda f sad afsdf sdaf sda fsda f sad afsdf sdaf sda fsda f sad afsdf sdaf sda fsda f <br>Желаемое время доставки: 18:20<br>Адрес: ул. Пушкина 8/9<br>Город: Минск<br></body></html>
+2019/12/02 19:38:15 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.time".
+2019/12/02 19:45:05 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.time".
+2019/12/02 19:45:48 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.time".
+2019/12/02 19:46:26 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.timec".
+2019/12/02 19:46:37 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.time".
+2019/12/02 19:49:03 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.time".
+2019/12/02 19:50:19 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.time".
+2019/12/02 19:53:00 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.time".
+2019/12/02 19:53:15 [info] [application] SiteController error:Не определено свойство "GlobalOrdersOrder.time".
+2019/12/03 09:38:30 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #1
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GW218-89]Balet 1 шт. (5.5 руб.)<br>Итого: 5.5 руб.<br><h3>Клиент</h3>Имя: Ншан<br>Телефон: +375 29 664341<br>Комментарий: սդաֆսդաֆ<br>Желаемое время доставки: 18:20<br>Адрес: ул. Пушкина 8/9<br>Город: Минск<br></body></html>
+2019/12/03 09:43:04 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #2
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GW218-89]Balet 1 шт. (5.5 руб.)<br>Итого: 5.5 руб.<br><h3>Клиент</h3>Имя: Ншан<br>Телефон: +375 29 664341<br>Желаемое время доставки: 18:20<br>Адрес: ул. Пушкина 8/9<br>Город: Минск<br></body></html>
+2019/12/03 09:45:32 [info] [application] sending mail to Axxx13xxxA@yandex.ru, from: robot@fireworks.by, subj:новый заказ на сайте fireworks.by #3
+body:
+<html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                </head>
+                <body>
+                <h3>Состав заказа</h3>
+                [GW218-89]Balet 1 шт. (5.5 руб.)<br>Итого: 5.5 руб.<br><h3>Клиент</h3>Имя: Ншан<br>Телефон: +375 29 664341<br>Комментарий: adsfs dafasd fsda f <br>Желаемое время доставки: 18:20<br>Адрес: ул. Пушкина 8/9<br>Город: Минск<br></body></html>

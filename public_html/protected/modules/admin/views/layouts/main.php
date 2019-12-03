@@ -15,6 +15,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/admin/form.css" />
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 
 <body>
@@ -58,8 +60,8 @@
                     array('label'=>'Структура страниц', 'url'=>array('/admin/stree/index')),
                     array('label'=>'Категории каталога', 'url'=>array('/admin/ctree/index')),
                     array('label'=>'Товары', 'url'=>array('/admin/items/list')),
-                  //  array('label'=>'Заказы', 'url'=>array('/admin/globalOrders/index')),
-
+                    array('label'=>'Заказы', 'url'=>array('/admin/globalOrders/index')),
+                    array('label'=>'Промокоды', 'url'=>array('/admin/promoCodes/index')),
                     array('label'=>'Logout ('.Yii::app()->adminUser->name.')',
                             'url'=>'#',
                             'linkOptions'=>array('csrf' => true,'submit' => '/admin/main/logout'/*array('item/delete', 'id'=>$item->id)*/, /*'confirm' => 'Точно выходим?'*/),

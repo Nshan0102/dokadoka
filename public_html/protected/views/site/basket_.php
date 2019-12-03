@@ -49,7 +49,7 @@ else
                 <td bgcolor="#b4e4ff"><?=$num++;?></td>
                 <td><?=$position->getCode();?></td>
                 <td><a href="<?=$position->buildHref();?>"><?=$position->header;?></a></td>
-                <td><span class="summ" id="item_<?=$position->getId()?>_price"><?=number_format($position->getPrice(),0,'',' ')?></span> Br</td>
+                <td><span class="summ" id="item_<?=$position->getId()?>_price"><?=number_format($position->getPrice(),0,'',' ')?></span> руб.</td>
                 <td>
                     <div style=" vertical-align: top;">
                         <span class="counterin">
@@ -59,7 +59,7 @@ else
                         </span>
                     </div>
                 </td>
-                <td><span class="summ" id="item_<?=$position->getId()?>_subtotal"><?=number_format($position->getSumPrice(),0,'',' ')?></span> Br</td>
+                <td><span class="summ" id="item_<?=$position->getId()?>_subtotal"><?=number_format($position->getSumPrice(),0,'',' ')?></span> руб.</td>
                 <td><a href="#" onclick="removeBasketItem(<?=$position->getId()?>);return false;"><img src="/i/delete.png" width="16" height="16" /></a></td>
             </tr>
         <?php
@@ -72,7 +72,7 @@ else
             <td colspan="2">
                 <span class="ittogo">ИТОГО:</span>
                 <span class="summa" id="basket_sum">
-                    <?=number_format(Yii::app()->shoppingCart->getCost(),0,'',' ');?> Br
+                    <?=number_format(Yii::app()->shoppingCart->getCost(),0,'',' ');?> руб.
                 </span>
             </td>
         </tr>
